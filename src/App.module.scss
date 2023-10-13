@@ -1,0 +1,147 @@
+$azul: rgb(80, 120, 255);
+$blanco: rgb(255, 255, 255);
+$negro: rgb(0, 0, 0);
+
+.containCirculosBackground {
+  position: fixed;
+  display: flex;
+  justify-content: space-around;
+  width: 90%;
+  height: 90vh;
+  transform: rotate(-45deg);
+}
+.animacion {
+  border-radius: 100%;
+  animation-name: mianimacion;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  &:nth-child(even) {
+    background-color: rgb(0, 80, 180);
+    border: solid 1px rgb(30, 30, 60);
+  }
+  &:nth-child(odd) {
+    background-color: rgb(150, 150, 150);
+    border: solid 1px rgb(40, 40, 40);
+  }
+}
+@keyframes mianimacion {
+  0% {
+    width: 1px;
+    height: 1px;
+    margin: {
+      top: 100vh;
+      left: 29px;
+      right: 29px;
+    }
+  }
+  100% {
+    margin: {
+      top: -60px;
+      left: 0;
+      right: 0;
+    }
+    width: 40px;
+    height: 40px;
+    border-width: 10px;
+    opacity: 0;
+  }
+}
+
+.containButton {
+  display: flex;
+  justify-content: space-around;
+  position: relative;
+}
+.buttonShow {
+  text-decoration: none;
+  color: $blanco;
+  border: none;
+  width: 150px;
+  text-align: center;
+  padding: 10px 20px;
+  margin: 50px 10px;
+  font-size: 25px;
+  font-weight: bold;
+  border-radius: 20px;
+  &:nth-child(1) {
+    background-color: rgb(255, 100, 0);
+    svg {
+      path {
+        stroke: $blanco;
+      }
+    }
+  }
+  &:nth-child(2) {
+    background-color: $azul;
+    svg {
+      path {
+        stroke: $blanco;
+      }
+    }
+  }
+  &:nth-child(3) {
+    background-color: rgb(60, 200, 58);
+    svg {
+      path {
+        stroke: $blanco;
+      }
+    }
+  }
+  &:hover {
+    transition: all 0.5s;
+    cursor: pointer;
+    &:nth-child(1) {
+      box-shadow: 0 0 0 20px rgb(200, 50, 0);
+    }
+    &:nth-child(2) {
+      box-shadow: 0 0 0 20px rgb(30, 70, 200);
+    }
+    &:nth-child(3) {
+      box-shadow: 0 0 0 20px rgb(10, 150, 0);
+    }
+  }
+}
+.active {
+  width: 30px;
+  margin: 50px 70px;
+  animation: {
+    name: move;
+    duration: 0.5s;
+  }
+}
+@keyframes move {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(130px);
+  }
+}
+.containYo {
+  background-color: rgba(20, 20, 20, 0.5);
+  border-radius: 10px;
+  border: 1px solid rgb(200, 50, 0);
+  opacity: 0;
+  max-width: 50%;
+  margin: 50px;
+  padding: 20px;
+  h1 {
+    font-size: 40px;
+    margin-top: 0;
+  }
+  p {
+    font-size: 20px;
+    margin: 0;
+  }
+  animation: {
+    name: appear;
+    duration: 0.6s;
+    fill-mode: forwards;
+  }
+}
+@keyframes appear {
+  100% {
+    opacity: 1;
+  }
+}

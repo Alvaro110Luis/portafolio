@@ -1,0 +1,52 @@
+.envoltura {
+  width: 900px;
+  margin: 15rem auto;
+  text-align: center;
+  .animation {
+    &:nth-child(1) div:nth-child(1) {
+      background-image: url("imagenes/Captura\ de\ pantalla\ 2023-05-15\ 171435.png");
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+    &:nth-child(2) div:nth-child(1) {
+      background-image: url("imagenes/Captura\ de\ pantalla\ 2023-05-15\ 171528.png");
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+    &:nth-child(3) div:nth-child(1) {
+      background-image: url("imagenes/Captura\ de\ pantalla\ 2023-05-15\ 171554.png");
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+  }
+}
+.animation {
+  display: inline-block;
+  transform-style: preserve-3d;
+  width: 200px;
+  height: 200px;
+  perspective: 700px;
+  transition: 300ms ease-in;
+  margin: 0px 3rem;
+  div {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    border-radius: 10px;
+    text-align: center;
+    overflow: hidden;
+    &:nth-child(3) {
+      background-color: orange;
+      transform: translateZ(-70px) rotateY(180deg);
+    }
+  }
+  &:hover {
+    transform: rotateY(180deg);
+  }
+}
+.back {
+  background-color: rgb(50, 50, 50);
+  transform: translateZ(-1px);
+}
+/*translateX e Y funcionan como 2d (creo que es acercamiento pero necesito mas pruebas)
+actu. translateZ no funciona en hover pero si es acercamiento y se pueden poner numeros negativos*/

@@ -1,0 +1,39 @@
+.contenedor {
+  margin: 150px;
+  text-align: center;
+  border: solid 2px rgb(255, 255, 255);
+  border-radius: 20px;
+  background-color: rgb(10,10,10);
+  &User {
+    color: rgb(255, 255, 255);
+    img {
+        border: solid 2px rgb(200, 200, 200);
+      }
+    div {
+      display: inline-block;
+      text-align: left;
+      h1 {
+        font-size: 30px;
+      }
+      p {
+        font-size: 20px;
+      }
+    }
+  }
+}
+.loading {
+  color: rgb(255, 255, 255);
+  font-size: 30px;
+}
+.buscador {
+  background-color: rgb(20, 20, 20);
+  color: rgb(255, 255, 255);
+  border: solid 1px rgb(255, 255, 255);
+  padding: 10px;
+  margin: 10px;
+  transition: all 1s;
+}
+.notFound {
+  font-size: 50px;
+  color: rgb(255, 255, 255);
+}

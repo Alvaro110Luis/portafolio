@@ -1,0 +1,75 @@
+.contenedor {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(500px);
+  border: solid 1px rgb(255, 255, 255);
+  box-shadow: 1px 1px 100px rgb(150, 150, 150);
+  border-radius: 10px;
+  width: 400px;
+  height: 400px;
+  text-align: center;
+}
+.imagen {
+  background-color: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(500px);
+  border: solid 1px rgb(255, 255, 255);
+  width: 130px;
+  height: 100px;
+  border-radius: 5px;
+  transition: all 0.6s;
+}
+.contenedorImagenes {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  position: absolute;
+  height: 400px;
+  left: -90px;
+}
+.contenedorInfo {
+  padding: 40px;
+}
+.texto {
+  color: rgb(255, 255, 255);
+  font-family: Arial, Helvetica, sans-serif;
+  span {
+    display: inline-block;
+    background-color: rgb(255, 255, 255);
+    width: 20px;
+    padding: 5px;
+    margin: 5px;
+    border-radius: 5px;
+    color: rgb(0, 0, 0);
+    &:hover {
+      cursor: pointer;
+      background-color: rgb(0, 0, 0);
+      color: rgb(255, 255, 255);
+    }
+  }
+}
+.textoBoton {
+  color: rgb(0, 0, 0);
+  position: absolute;
+  background-color: rgb(255, 255, 255);
+  border-radius: 20px;
+  padding: 10px 30px;
+  left: 50%;
+  bottom: -5%;
+  transform: translateX(-50%);
+  &:hover {
+    cursor: pointer;
+    background-color: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
+  }
+}
+.imagenPrincipal {
+  width: 300px;
+  height: 200px;
+  transition: all 0.6s;
+}
+.rotar {
+  transform: rotate(-15deg);
+}
