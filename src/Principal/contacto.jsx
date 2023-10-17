@@ -4,7 +4,7 @@ import { BiLogoGmail } from "react-icons/bi";
 
 function Contacto() {
   return (
-    <div className={styles.move}>
+    <div className={styles.move} id="contacto">
       <h1>Contactame</h1>
       <nav>
         <ul>

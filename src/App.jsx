@@ -2,6 +2,8 @@ import { useEffect, useRef, useState } from "react";
 import { Link, Outlet, useLocation } from "react-router-dom";
 import styles from "./App.module.scss";
 import { BiSolidCircle } from "react-icons/bi";
+import Proyectos from "./Principal/proyectos";
+import Contacto from "./Principal/contacto";
 
 function App() {
   useEffect(() => {
@@ -69,47 +71,51 @@ function App() {
         ></div>
       </section>
       <section className={styles.containButton}>
-        <Link
-          to="/"
+        <a
+          href="#yo"
           className={`${styles.buttonShow} ${
             location.pathname == "/" ? styles.active : ""
           }`}
         >
-          {location.pathname == "/" ? <BiSolidCircle /> : "Yo"}
-        </Link>
-        <Link
-          to="/proyectos"
+          Sobre mí
+        </a>
+        <a
+          href="#proyectos"
           className={`${styles.buttonShow} ${
-            location.pathname == "/proyectos" ? styles.active : ""
+            location.pathname == "/#proyectos" ? styles.active : ""
           }`}
         >
-          {location.pathname == "/proyectos" ? <BiSolidCircle /> : "Proyectos"}
-        </Link>
-        <Link
-          to="/contacto"
+          Proyectos
+        </a>
+        <a
+          href="#contacto"
           className={`${styles.buttonShow} ${
-            location.pathname == "/contacto" ? styles.active : ""
+            location.pathname == "/#contacto" ? styles.active : ""
           }`}
         >
-          {location.pathname == "/contacto" ? <BiSolidCircle /> : "Contacto"}
-        </Link>
+          Contacto
+        </a>
       </section>
       <section>
         {location.pathname == "/" ? (
-          <div className={styles.containYo}>
-            <h1>Sobre mí</h1>
-            <p>
-              Soy un desarrollador web autodidacta con una profunda pasión por
-              el mundo de la programación. Me motiva la idea de convertir mis
-              ideas en soluciones funcionales y navegables. Mi viaje en la
-              programación comenzó de forma autodidacta, y esta experiencia me
-              ha permitido desarrollar habilidades sólidas y un profundo interés
-              por la creación de sitios web y aplicaciones web. Estoy
-              comprometido a seguir aprendiendo y mejorando mis habilidades
-              constantemente para ofrecer soluciones innovadoras y efectivas a
-              los desafíos en el desarrollo web.
-            </p>
-          </div>
+          <>
+            <div className={styles.containYo} id="yo">
+              <h1>Sobre mí</h1>
+              <p>
+                Soy un desarrollador web autodidacta con una profunda pasión por
+                el mundo de la programación. Me motiva la idea de convertir mis
+                ideas en soluciones funcionales y navegables. Mi viaje en la
+                programación comenzó de forma autodidacta, y esta experiencia me
+                ha permitido desarrollar habilidades sólidas y un profundo
+                interés por la creación de sitios web y aplicaciones web. Estoy
+                comprometido a seguir aprendiendo y mejorando mis habilidades
+                constantemente para ofrecer soluciones innovadoras y efectivas a
+                los desafíos en el desarrollo web.
+              </p>
+            </div>
+            <Proyectos />
+            <Contacto />
+          </>
         ) : (
           <Outlet />
         )}

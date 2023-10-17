@@ -15,7 +15,7 @@ import imgCard from "../img/Captura de pantalla 2023-09-30 100827.png";
 
 function Proyectos() {
   return (
-    <article className={styles.contain}>
+    <article className={styles.contain} id="proyectos">
       <section>
         <h1>Proyectos</h1>
       </section>
