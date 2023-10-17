@@ -5,13 +5,14 @@ import { BiSolidCircle } from "react-icons/bi";
 
 function App() {
   useEffect(() => {
-    document.body.style.margin = "50px 30px";
-    document.body.style.backgroundColor = "rgb(0,0,0)";
+    document.body.style.backgroundColor = "rgb(0, 0, 0)";
+    document.body.style.margin = "10px 30px";
     document.body.style.color = "rgb(255, 255, 255)";
+    document.body.className = styles.bodyProyectos;
     return () => {
       document.body.style.backgroundColor = "";
-      document.body.style.color = "";
       document.body.style.margin = "";
+      document.body.style.color = "";
     };
   }, []);
   const location = useLocation();
@@ -67,7 +68,6 @@ function App() {
           }}
         ></div>
       </section>
-
       <section className={styles.containButton}>
         <Link
           to="/"

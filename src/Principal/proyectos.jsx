@@ -14,17 +14,10 @@ import imgControlApi from "../img/Captura de pantalla 2023-10-06 095359.png";
 import imgCard from "../img/Captura de pantalla 2023-09-30 100827.png";
 
 function Proyectos() {
-  useEffect(() => {
-    document.body.className = styles.bodyProyectos;
-    return () => {
-      document.body.className = "";
-    };
-  }, []);
   return (
     <article className={styles.contain}>
       <section>
         <h1>Proyectos</h1>
-        <p>Aqui algunos proyectos que hice:</p>
       </section>
       <nav className={styles.containLink}>
         <Link to="/proyectos/calculadora" className={styles.link}>
