@@ -1,5 +1,4 @@
-import { useEffect, useRef, useState } from "react";
-import { Link, Outlet, useLocation } from "react-router-dom";
+import { useEffect, useState } from "react";
 import styles from "./App.module.scss";
 import { BiSolidCircle } from "react-icons/bi";
 import { AiFillSetting } from "react-icons/ai";
@@ -17,11 +16,17 @@ function App() {
       document.body.style.color = "";
     };
   }, []);
+  const [light, setlight] = useState(false);
   const [lenguage, setLenguage] = useState("es");
-  const [light, setlight] = useState(true);
   return (
-    <article>
-      <section className={styles.containCirculosBackground}>
+    <article className={light ? styles.containLight : styles.containDark}>
+      <section
+        className={`${styles.containCirculosBackground} ${
+          light
+            ? styles.containCirculosBackgroundLight
+            : styles.containCirculosBackgroundDark
+        }`}
+      >
         <div
           className={styles.animacion}
           style={{
@@ -71,7 +76,11 @@ function App() {
           }}
         ></div>
       </section>
-      <nav className={styles.containButton}>
+      <nav
+        className={`${styles.containButton} ${
+          light ? styles.containButtonLight : styles.containButtonDark
+        }`}
+      >
         <a href="#yo">
           <BiSolidCircle />
         </a>
@@ -127,22 +136,20 @@ function App() {
         </section>
       </nav>
       <section className={styles.containContent}>
-        <div id="yo">
-          <h1>{lenguage == "es" ? "Sobre mí" : "About me"}</h1>
+        <div id="yo" className={styles.containContentMe}>
+          <h1>
+            <span>{lenguage == "es" ? "Sobre mí" : "About me"}</span>
+          </h1>
           <p>
-            Soy un desarrollador web autodidacta con una profunda pasión por el
-            mundo de la programación. Me motiva la idea de convertir mis ideas
-            en soluciones funcionales y navegables. Mi viaje en la programación
-            comenzó de forma autodidacta, y esta experiencia me ha permitido
-            desarrollar habilidades sólidas y un profundo interés por la
-            creación de sitios web y aplicaciones web. Estoy comprometido a
-            seguir aprendiendo y mejorando mis habilidades constantemente para
-            ofrecer soluciones innovadoras y efectivas a los desafíos en el
-            desarrollo web.
+            <span>
+              {lenguage == "es"
+                ? "Soy un desarrollador web frontend que empezo siendo autodidacta esta experiencia me ha permitido desarrollar habilidades y un interés por la creación de sitios web y aplicaciones web. Estoy comprometido a seguir aprendiendo y mejorando mis habilidades para ofrecer soluciones innovadoras y efectivas a los desafíos en el desarrollo web."
+                : "I'am a autodidact frontend web dev with a deep passion for programing. my motivation it's the idea of transform my ideas in solutions functionals. my journey in programation starts in the path autodidact this experiences allow me learn skills and an  interest for the creation of web sites and web app. I'am engaged to continue learning and boost my skills to offer innovate solutions and efectives to the challengs in the web dev"}
+            </span>
           </p>
         </div>
-        <Proyectos />
-        <Contacto />
+        <Proyectos mode={light} />
+        <Contacto mode={light} />
       </section>
     </article>
   );

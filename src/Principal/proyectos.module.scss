@@ -1,0 +1,140 @@
+.contain {
+  @mixin appear($direccion) {
+    @if ($direccion== "X") {
+      transform: translateX(100%);
+    } @else if($direccion== "-X") {
+      transform: translateX(-100%);
+    } @else if($direccion== "Y") {
+      transform: translateY(100%);
+    } @else if($direccion== "-Y") {
+      transform: translateY(-100%);
+    }
+    animation: {
+      duration: 2s;
+      fill-mode: forwards;
+      name: appear;
+    }
+    @keyframes appear {
+      100% {
+        transform: translateY(0);
+        transform: translateX(0);
+      }
+    }
+  }
+  margin: {
+    left: 15%;
+    bottom: 20%;
+  }
+  section {
+    border: {
+      right: 10px solid rgb(0, 180, 0);
+      top: 5px solid rgb(0, 120, 0);
+    }
+    padding: 10px;
+    margin: 5% 0;
+    overflow: hidden;
+    h1 {
+      margin: 0;
+      padding: 10px;
+      font-size: xx-large;
+      @include appear("-Y");
+    }
+  }
+  &Link {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 50px;
+    .link {
+      @mixin linkHover($colorBorde) {
+        @for $i from 1 through 10 {
+          &:nth-child(#{$i}) {
+            @if ($i%2==0) {
+              border-bottom-right-radius: 20px;
+              &:hover {
+                box-shadow: 5px 5px 5px 5px $colorBorde;
+              }
+            } @else if($i%3==0) {
+              border-bottom-left-radius: 20px;
+              &:hover {
+                box-shadow: -5px 5px 5px 5px $colorBorde;
+              }
+            } @else if ($i%5==0) {
+              border-top-right-radius: 20px;
+              &:hover {
+                box-shadow: 5px -5px 5px 5px $colorBorde;
+              }
+            } @else {
+              border-top-left-radius: 20px;
+              &:hover {
+                box-shadow: -5px -5px 5px 5px $colorBorde;
+              }
+            }
+          }
+        }
+      }
+      &Light {
+        h3 {
+          color: rgb(0, 0, 0);
+        }
+        img {
+          opacity: 0.8;
+        }
+        &:hover {
+          background-color: rgba(200, 200, 200, 0.5);
+        }
+        @include linkHover(rgb(50, 50, 50));
+      }
+      &Dark {
+        h3 {
+          color: rgb(255, 255, 255);
+        }
+        img {
+          opacity: 0.6;
+        }
+        &:hover {
+          background-color: rgba(100, 100, 100, 0.5);
+        }
+        @include linkHover(rgb(200, 200, 200));
+      }
+      transition: all 0.5s;
+      padding: 20px;
+      text-decoration: none;
+      h3 {
+        font-size: x-large;
+      }
+      img {
+        transition: all 0.5s;
+      }
+      &:hover {
+        img {
+          opacity: 1;
+        }
+      }
+      @for $i from 1 through 10 {
+        &:nth-child(#{$i}) {
+          @if ($i%2==0) {
+            border: {
+              left: 10px solid rgb(0, 180, 0);
+              top: 10px solid rgb(0, 120, 0);
+            }
+          } @else if($i%3==0) {
+            border: {
+              right: 10px solid rgb(0, 180, 0);
+              top: 10px solid rgb(0, 120, 0);
+            }
+          } @else if($i%5==0) {
+            border: {
+              left: 10px solid rgb(0, 180, 0);
+              bottom: 10px solid rgb(0, 120, 0);
+            }
+          } @else {
+            border: {
+              right: 10px solid rgb(0, 180, 0);
+              bottom: 10px solid rgb(0, 120, 0);
+            }
+          }
+        }
+      }
+    }
+  }
+}
