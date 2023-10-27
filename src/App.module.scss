@@ -1,3 +1,4 @@
+@use "./Global";
 $azul: rgb(80, 120, 255);
 $blanco: rgb(255, 255, 255);
 $negro: rgb(0, 0, 0);
@@ -260,61 +261,6 @@ $breakpoints: (
     display: inline-block;
     position: relative;
     z-index: 1;
-    &Me {
-      margin: {
-        left: 15%;
-        top: 20%;
-        right: 20%;
-        bottom: 20%;
-      }
-      h1 {
-        border: {
-          left: 10px solid rgb(255, 0, 0);
-          bottom: 5px solid rgb(105, 0, 0);
-        }
-        font-size: xx-large;
-        overflow: hidden;
-        span {
-          animation: {
-            name: appearX;
-            duration: 1s;
-            fill-mode: forwards;
-          }
-          display: inline-block;
-          transform: translateX(-100%);
-        }
-      }
-      p {
-        overflow: hidden;
-        line-height: 1.7;
-        padding: {
-          right: 30px;
-          bottom: 20px;
-        }
-        border: {
-          right: 10px solid rgb(105, 0, 0);
-          bottom: 5px solid rgb(255, 0, 0);
-        }
-        span {
-          animation: {
-            name: appear-Y;
-            duration: 2s;
-            fill-mode: forwards;
-          }
-          display: inline-block;
-          transform: translateY(100%);
-        }
-      }
-      @keyframes appearX {
-        100% {
-          transform: translateX(0);
-        }
-      }
-      @keyframes appear-Y {
-        100% {
-          transform: translateY(0);
-        }
-      }
-    }
+    
   }
 }

@@ -1,0 +1,27 @@
+@mixin appear($direccion) {
+  @if ($direccion== "X") {
+    transform: translateX(100%);
+  } @else if($direccion== "-X") {
+    transform: translateX(-100%);
+  } @else if($direccion== "Y") {
+    transform: translateY(100%);
+  } @else if($direccion== "-Y") {
+    transform: translateY(-100%);
+  }
+  animation: {
+    duration: .4s;
+    fill-mode: forwards;
+    name: appear;
+    timing-function: linear;
+  }
+  @keyframes appear {
+    100% {
+      transform: translateY(0);
+      transform: translateX(0);
+    }
+  }
+}
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}

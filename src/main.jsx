@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import App from "./App.jsx";
-import "./Global.scss";
+import "./_Global.scss";
 
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Blog from "./proyectos/practica1blog/indexblog";

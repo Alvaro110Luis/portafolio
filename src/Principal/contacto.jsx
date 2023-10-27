@@ -1,34 +1,35 @@
 import styles from "./contacto.module.scss";
 import { BsLinkedin, BsWhatsapp } from "react-icons/bs";
 import { BiLogoGmail } from "react-icons/bi";
+import { Link } from "react-router-dom";
 
 function Contacto() {
   return (
-    <div className={styles.move} id="contacto">
-      <h1>Contactame</h1>
+    <section className={styles.containContact} id="contacto">
+      <article className={styles.containContactTitle}>
+        <h1>Contactame</h1>
+      </article>
       <nav>
-        <ul>
-          <li>
-            <a href="https://www.linkedin.com/in/luis-morales-184076285/">
-              <BsLinkedin />
-            </a>
-            <div></div>
-          </li>
-          <li>
-            <a href="mailto:luismoralvarez9020@gmail.com">
-              <BiLogoGmail />
-            </a>
-            <div></div>
-          </li>
-          <li>
-            <a href="https://wa.me/+59163250398">
-              <BsWhatsapp />
-            </a>
-            <div></div>
-          </li>
-        </ul>
+        <article>
+          <div></div>
+          <Link to="https://www.linkedin.com/in/luis-morales-184076285/">
+            <BsLinkedin />
+          </Link>
+        </article>
+        <article>
+          <div></div>
+          <Link to="mailto:luismoralvarez9020@gmail.com">
+            <BiLogoGmail />
+          </Link>
+        </article>
+        <article>
+          <div></div>
+          <Link to="https://wa.me/+59163250398">
+            <BsWhatsapp />
+          </Link>
+        </article>
       </nav>
-    </div>
+    </section>
   );
 }
 export default Contacto;
