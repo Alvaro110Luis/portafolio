@@ -2,14 +2,14 @@ import { Link } from "react-router-dom";
 
 import styles from "./proyectos.module.scss";
 
-import imgBlog from "../img/Captura de pantalla 2023-10-03 174242.png";
-import imgCalculadora from "../img/Captura de pantalla 2023-09-30 100343.png";
-import imgInterfaz from "../img/Captura de pantalla 2023-09-30 100435.png";
-import imgTarjeta from "../img/Captura de pantalla 2023-09-30 100613.png";
-import imgNetflix from "../img/Captura de pantalla 2023-09-30 100641.png";
-import imgLeftTogle from "../img/Captura de pantalla 2023-09-30 100657.png";
-import imgControlApi from "../img/Captura de pantalla 2023-10-06 095359.png";
-import imgCard from "../img/Captura de pantalla 2023-09-30 100827.png";
+import imgBlog from "../assets/img/Captura de pantalla 2023-10-03 174242.png";
+import imgCalculadora from "../assets/img/Captura de pantalla 2023-09-30 100343.png";
+import imgInterfaz from "../assets/img/Captura de pantalla 2023-09-30 100435.png";
+import imgTarjeta from "../assets/img/Captura de pantalla 2023-09-30 100613.png";
+import imgNetflix from "../assets/img/Captura de pantalla 2023-09-30 100641.png";
+import imgLeftTogle from "../assets/img/Captura de pantalla 2023-09-30 100657.png";
+import imgControlApi from "../assets/img/Captura de pantalla 2023-10-06 095359.png";
+import imgCard from "../assets/img/Captura de pantalla 2023-09-30 100827.png";
 
 function Proyectos(props) {
   return (
