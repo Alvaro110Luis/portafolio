@@ -137,11 +137,9 @@ function App() {
         </section>
       </nav>
       <section className={styles.containContent}>
-        <article>
-          <div id="yo" className={styles.containContentMe}>
-            <h1>
-              <span>{lenguage == "es" ? "Sobre mí" : "About me"}</span>
-            </h1>
+        <article className={styles.containContentStart}>
+          <div id="yo" className={styles.containContentStartMe}>
+            <h1>{lenguage == "es" ? "Sobre mí" : "About me"}</h1>
             <p>
               <span>
                 {lenguage == "es"
@@ -150,18 +148,40 @@ function App() {
               </span>
             </p>
           </div>
-          <div>
+          <div className={styles.containContentStartTecIcons}>
             <AiFillHtml5
-              style={{ color: "rgb(255,100,0)", fontSize: "80px" }}
+              style={{ color: "rgb(255,100,0)" }}
+              className={styles.rotarAntihorario}
             />
-            <DiCss3 style={{ color: "rgb(0,120,255)", fontSize: "80px" }} />
-            <BiLogoJavascript
-              style={{ color: "rgb(255,255,0)", fontSize: "80px" }}
+            <DiCss3
+              style={{
+                color: "rgb(0,120,255)",
+                gridColumn: "3/4",
+              }}
+              className={styles.rotarAntihorario}
             />
             <BiLogoReact
-              style={{ color: "rgb(0,200,255)", fontSize: "80px" }}
+              style={{
+                color: "rgb(0,200,255)",
+                gridColumn: "2/3",
+              }}
+              className={styles.rotarHorario}
             />
-            <DiSass style={{ color: "rgb(255,0,255)", fontSize: "80px" }} />
+            <BiLogoJavascript
+              style={{
+                color: "rgb(255,255,0)",
+                gridRow: "3/4",
+              }}
+              className={styles.rotarAntihorario}
+            />
+            <DiSass
+              style={{
+                color: "rgb(255,0,255)",
+                gridRow: "3/4",
+                gridColumn: "3/4",
+              }}
+              className={styles.rotarAntihorario}
+            />
           </div>
         </article>
         <Proyectos mode={light} />
