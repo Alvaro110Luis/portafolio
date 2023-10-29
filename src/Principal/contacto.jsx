@@ -3,11 +3,11 @@ import { BsLinkedin, BsWhatsapp } from "react-icons/bs";
 import { BiLogoGmail } from "react-icons/bi";
 import { Link } from "react-router-dom";
 
-function Contacto() {
+function Contacto(props) {
   return (
     <section className={styles.containContact} id="contacto">
       <article className={styles.containContactTitle}>
-        <h1>Contactame</h1>
+        <h1>{props.translate == "es" ? "Contactame" : "Let's Talk"}</h1>
       </article>
       <nav>
         <article>

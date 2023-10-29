@@ -15,7 +15,7 @@ function Proyectos(props) {
   return (
     <article className={styles.contain} id="proyectos">
       <section>
-        <h1>Proyectos</h1>
+        <h1>{props.translate == "es" ? "Proyectos" : "Projects"}</h1>
       </section>
       <nav className={styles.containLink}>
         <Link
@@ -24,7 +24,7 @@ function Proyectos(props) {
             styles.link
           }`}
         >
-          <h3>Calculadora</h3>
+          <h3>{props.translate == "es" ? "Calculadora" : "Calculator"}</h3>
           <img src={imgCalculadora} width="100%" height={250} />
         </Link>
         <Link
@@ -53,7 +53,7 @@ function Proyectos(props) {
           }`}
           style={{ gridColumn: "1/3" }}
         >
-          <h3>Interfaz</h3>
+          <h3>{props.translate == "es" ? "Interfaz" : "Interface"}</h3>
           <img src={imgInterfaz} width="100%" height={200} />
         </Link>
         <Link
@@ -62,7 +62,7 @@ function Proyectos(props) {
             styles.link
           }`}
         >
-          <h3>Card</h3>
+          <h3>{props.translate == "es" ? "Tarjeta" : "Card"}</h3>
           <img src={imgCard} width="100%" height={250} />
         </Link>
         <Link
@@ -72,7 +72,7 @@ function Proyectos(props) {
           }`}
           style={{ gridRow: "4/6" }}
         >
-          <h3>Left Togle</h3>
+          <h3>{props.translate == "es" ? "Barra Lateral" : "Sidebar"}</h3>
           <img src={imgLeftTogle} width={250} height={560} />
         </Link>
         <Link
@@ -82,7 +82,7 @@ function Proyectos(props) {
           }`}
           style={{ gridColumn: "2/4" }}
         >
-          <h3>Tarjeta</h3>
+          <h3>{props.translate == "es" ? "Tarjeta 3D" : "3D Card"}</h3>
           <img src={imgTarjeta} width="100%" height={200} />
         </Link>
         <Link
@@ -92,7 +92,7 @@ function Proyectos(props) {
           }`}
           style={{ gridColumn: "2/4" }}
         >
-          <h3>Control API</h3>
+          <h3>{props.translate == "es" ? "Control API" : "API Control"}</h3>
           <img src={imgControlApi} width="100%" height={250} />
         </Link>
       </nav>

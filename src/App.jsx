@@ -184,8 +184,8 @@ function App() {
             />
           </div>
         </article>
-        <Proyectos mode={light} />
-        <Contacto mode={light} />
+        <Proyectos mode={light} translate={lenguage} />
+        <Contacto mode={light} translate={lenguage} />
       </section>
     </article>
   );
