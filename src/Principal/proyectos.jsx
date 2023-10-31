@@ -25,7 +25,7 @@ function Proyectos(props) {
           }`}
         >
           <h3>{props.translate == "es" ? "Calculadora" : "Calculator"}</h3>
-          <img src={imgCalculadora} width="100%" height={250} />
+          <img src={imgCalculadora} />
         </Link>
         <Link
           to="/proyectos/blog"
@@ -34,7 +34,7 @@ function Proyectos(props) {
           }`}
         >
           <h3>Blog</h3>
-          <img src={imgBlog} width="100%" height={200} />
+          <img src={imgBlog} />
         </Link>
         <Link
           to="/proyectos/netflix"
@@ -44,7 +44,7 @@ function Proyectos(props) {
           style={{ gridRow: "1/3", gridColumn: "2/4" }}
         >
           <h3>Netflix</h3>
-          <img src={imgNetflix} width="100%" height={490} />
+          <img src={imgNetflix} />
         </Link>
         <Link
           to="/proyectos/interfaz"
@@ -54,7 +54,7 @@ function Proyectos(props) {
           style={{ gridColumn: "1/3" }}
         >
           <h3>{props.translate == "es" ? "Interfaz" : "Interface"}</h3>
-          <img src={imgInterfaz} width="100%" height={200} />
+          <img src={imgInterfaz} />
         </Link>
         <Link
           to="/proyectos/card"
@@ -63,7 +63,7 @@ function Proyectos(props) {
           }`}
         >
           <h3>{props.translate == "es" ? "Tarjeta" : "Card"}</h3>
-          <img src={imgCard} width="100%" height={250} />
+          <img src={imgCard} />
         </Link>
         <Link
           to="/proyectos/leftTogle"
@@ -73,7 +73,7 @@ function Proyectos(props) {
           style={{ gridRow: "4/6" }}
         >
           <h3>{props.translate == "es" ? "Barra Lateral" : "Sidebar"}</h3>
-          <img src={imgLeftTogle} width={250} height={560} />
+          <img src={imgLeftTogle} />
         </Link>
         <Link
           to="/proyectos/tarjeta"
@@ -83,7 +83,7 @@ function Proyectos(props) {
           style={{ gridColumn: "2/4" }}
         >
           <h3>{props.translate == "es" ? "Tarjeta 3D" : "3D Card"}</h3>
-          <img src={imgTarjeta} width="100%" height={200} />
+          <img src={imgTarjeta} />
         </Link>
         <Link
           to="/proyectos/controlapi"
@@ -93,7 +93,7 @@ function Proyectos(props) {
           style={{ gridColumn: "2/4" }}
         >
           <h3>{props.translate == "es" ? "Control API" : "API Control"}</h3>
-          <img src={imgControlApi} width="100%" height={250} />
+          <img src={imgControlApi} />
         </Link>
       </nav>
     </article>

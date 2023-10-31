@@ -254,7 +254,7 @@ $breakpoints: (
     }
   }
   &Content {
-    width: 75%;
+    width: 80%;
     margin: {
       left: 10%;
     }
@@ -274,20 +274,30 @@ $breakpoints: (
         margin-right: 10%;
         h1 {
           margin-top: 0;
-          padding: 10px;
           font-size: xx-large;
           border: {
             left: 10px solid rgb(155, 0, 0);
             bottom: 5px solid rgb(255, 0, 0);
           }
+          overflow: hidden;
+          span{
+            padding: 10px;
+            display: block;
+            @include Global.appear("Y")
+          }
         }
         p {
-          padding: 20px;
           border: {
             top: 5px solid rgb(255, 0, 0);
             right: 10px solid rgb(155, 0, 0);
           }
           line-height: 1.8;
+          overflow: hidden;
+          span{
+            padding: 20px;
+            display: block;
+            @include Global.appear("X")
+          }
         }
       }
       &TecIcons {

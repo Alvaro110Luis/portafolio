@@ -10,11 +10,9 @@ import Contacto from "./Principal/contacto";
 function App() {
   useEffect(() => {
     document.body.style.backgroundColor = "rgb(0, 0, 0)";
-    document.body.style.color = "rgb(255, 255, 255)";
     document.body.className = styles.bodyProyectos;
     return () => {
       document.body.style.backgroundColor = "";
-      document.body.style.color = "";
     };
   }, []);
   const [light, setlight] = useState(false);
@@ -139,7 +137,9 @@ function App() {
       <section className={styles.containContent}>
         <article className={styles.containContentStart}>
           <div id="yo" className={styles.containContentStartMe}>
-            <h1>{lenguage == "es" ? "Sobre mí" : "About me"}</h1>
+            <h1>
+              <span>{lenguage == "es" ? "Sobre mí" : "About me"}</span>
+            </h1>
             <p>
               <span>
                 {lenguage == "es"
