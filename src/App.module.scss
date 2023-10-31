@@ -106,11 +106,6 @@ $negro: rgb(0, 0, 0);
     }
   }
 }
-$breakpoints: (
-  sm: 540px,
-  md: 768px,
-  lg: 1024px,
-);
 @mixin button($backgroundColor) {
   white-space: nowrap;
   font-size: x-large;
@@ -119,12 +114,13 @@ $breakpoints: (
   color: $blanco;
   text-decoration: none;
   padding: 10px;
-  margin: 20% 60%;
   border-radius: 5px;
+  @media (min-width: 768px) {
+    margin: 0 auto;
+  }
   font-weight: bold;
   background-color: $backgroundColor;
   overflow: hidden;
-  width: 25px;
   transition: all 0.5s;
 }
 .contain {
@@ -147,14 +143,58 @@ $breakpoints: (
         box-shadow: -10px 10px $blanco;
       }
     }
-    position: fixed;
-    width: 10%;
-    height: 100vh;
     display: flex;
+    position: fixed;
+    gap: 100px;
+    z-index: 2;
+    width: 25%;
+    height: 100vh;
     flex-direction: column;
     justify-content: center;
-    z-index: 2;
+    @media (max-width: 768px) {
+      width: 80%;
+      height: 50px;
+      padding: 50px 10%;
+      flex-direction: row;
+      gap: 0;
+      justify-content: space-around;
+      background-color: rgb(10, 10, 10);
+      border-bottom: 1px solid rgb(255, 255, 255);
+    }
     a {
+      margin: 0 auto;
+      width: 25px;
+      @media (max-width: 768px) {
+        svg {
+          display: none;
+        }
+        width: 110px;
+        text-align: center;
+        &:nth-child(1)::after {
+          content: "Sobre mí";
+        }
+        &:nth-child(2)::after {
+          content: "Proyectos";
+        }
+        &:nth-child(3)::after {
+          content: "Contacto";
+        }
+      }
+      @media (max-width: 600px) {
+        svg {
+          display: block;
+        }
+        width: 25px;
+        &:nth-child(1)::after {
+          content: "";
+        }
+        &:nth-child(2)::after {
+          content: "";
+        }
+        &:nth-child(3)::after {
+          content: "";
+        }
+      }
       border: 1px solid $negro;
       &:nth-child(1) {
         @include button(rgb(255, 0, 0));
@@ -165,19 +205,21 @@ $breakpoints: (
       &:nth-child(3) {
         @include button(rgb(0, 0, 255));
       }
-      &:hover {
-        svg {
-          display: none;
-        }
-        width: 120px;
-        &:nth-child(1)::after {
-          content: "Sobre mí";
-        }
-        &:nth-child(2)::after {
-          content: "Proyectos";
-        }
-        &:nth-child(3)::after {
-          content: "Contacto";
+      @media (min-width: 600px) {
+        &:hover {
+          svg {
+            display: none;
+          }
+          width: 120px;
+          &:nth-child(1)::after {
+            content: "Sobre mí";
+          }
+          &:nth-child(2)::after {
+            content: "Proyectos";
+          }
+          &:nth-child(3)::after {
+            content: "Contacto";
+          }
         }
       }
     }
@@ -249,14 +291,18 @@ $breakpoints: (
       .settingsIconOpen {
         transform: rotate(270deg);
       }
-      width: 190px;
+      @media (min-width: 769px) {
+        width: 180px;
+      }
       height: 150px;
     }
   }
   &Content {
     width: 80%;
-    margin: {
-      left: 10%;
+    margin-left: 10%;
+    @media (max-width: 768px) {
+      margin: 150px 5%;
+      width: 90%;
     }
     display: inline-block;
     position: relative;
@@ -280,10 +326,10 @@ $breakpoints: (
             bottom: 5px solid rgb(255, 0, 0);
           }
           overflow: hidden;
-          span{
+          span {
             padding: 10px;
             display: block;
-            @include Global.appear("Y")
+            @include Global.appear("Y");
           }
         }
         p {
@@ -293,10 +339,10 @@ $breakpoints: (
           }
           line-height: 1.8;
           overflow: hidden;
-          span{
+          span {
             padding: 20px;
             display: block;
-            @include Global.appear("X")
+            @include Global.appear("X");
           }
         }
       }

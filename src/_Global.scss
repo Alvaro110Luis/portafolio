@@ -9,7 +9,7 @@
     transform: translateY(-100%);
   }
   animation: {
-    duration: .5s;
+    duration: 0.5s;
     fill-mode: forwards;
     name: appear;
     timing-function: linear;
@@ -21,6 +21,11 @@
     }
   }
 }
+$breakpoints: (
+  sm: 540px,
+  md: 768px,
+  lg: 1024px,
+);
 body {
   margin: 0;
   font-family: Arial, Helvetica, sans-serif;
