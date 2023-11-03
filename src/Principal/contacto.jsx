@@ -22,12 +22,6 @@ function Contacto(props) {
             <BiLogoGmail />
           </Link>
         </article>
-        <article>
-          <div></div>
-          <Link to="https://wa.me/+59163250398">
-            <BsWhatsapp />
-          </Link>
-        </article>
       </nav>
     </section>
   );
