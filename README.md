@@ -1,4 +1,4 @@
-# Personal protfolio / Portafolio personal
+# Personal portfolio / Portafolio personal
 
 Link: ----------------
 
