@@ -5,6 +5,9 @@
     left: 15%;
     bottom: 20%;
   }
+  @media (max-width:768px) {
+    margin: 250px 0;
+  }
   &Title {
     border: {
       left: 10px solid rgb(0, 0, 100);
@@ -22,6 +25,7 @@
   nav {
     display: flex;
     justify-content: space-around;
+    flex-wrap: wrap;
     article {
       @mixin icons($color) {
         border: {
@@ -40,6 +44,9 @@
       overflow: hidden;
       a {
         font-size: 80px;
+        @media (max-width:471px) {
+          font-size: 40px;
+        }
         svg {
           margin: 20px;
           @include Global.appear("Y");

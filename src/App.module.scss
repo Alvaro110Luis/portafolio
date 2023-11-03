@@ -4,7 +4,9 @@ $blanco: rgb(255, 255, 255);
 $negro: rgb(0, 0, 0);
 .bodyProyectos {
   &::-webkit-scrollbar {
-    width: 10px;
+    @media (max-width: 600px) {
+      width: 5px;
+    }
     background-color: $negro;
   }
   &::-webkit-scrollbar-thumb {
@@ -115,9 +117,6 @@ $negro: rgb(0, 0, 0);
   text-decoration: none;
   padding: 10px;
   border-radius: 5px;
-  @media (min-width: 768px) {
-    margin: 0 auto;
-  }
   font-weight: bold;
   background-color: $backgroundColor;
   overflow: hidden;
@@ -134,11 +133,19 @@ $negro: rgb(0, 0, 0);
   }
   &Button {
     &Light {
+      @media (max-width: 768px) {
+        background-color: rgba(0, 0, 0, 0.5);
+        backdrop-filter: blur(5px);
+      }
       a {
         box-shadow: 10px 10px $negro;
       }
     }
     &Dark {
+      @media (max-width: 768px) {
+        background-color: rgba(0, 0, 0, 0.5);
+        backdrop-filter: blur(5px);
+      }
       a {
         box-shadow: -10px 10px $blanco;
       }
@@ -152,14 +159,15 @@ $negro: rgb(0, 0, 0);
     flex-direction: column;
     justify-content: center;
     @media (max-width: 768px) {
-      width: 80%;
+      width: 100%;
       height: 50px;
-      padding: 50px 10%;
+      padding: 50px 0;
+      bottom: 0;
       flex-direction: row;
       gap: 0;
-      justify-content: space-around;
-      background-color: rgb(10, 10, 10);
-      border-bottom: 1px solid rgb(255, 255, 255);
+      justify-content: center;
+      align-items: end;
+      border-top: 1px solid rgb(255, 255, 255);
     }
     a {
       margin: 0 auto;
@@ -228,6 +236,7 @@ $negro: rgb(0, 0, 0);
     @include button($blanco);
     color: $negro;
     padding: 0;
+    margin: 0 auto;
     font-size: 40px;
     width: 45px;
     height: 45px;
@@ -301,7 +310,7 @@ $negro: rgb(0, 0, 0);
     width: 80%;
     margin-left: 10%;
     @media (max-width: 768px) {
-      margin: 150px 5%;
+      margin: 10% 5%;
       width: 90%;
     }
     display: inline-block;
@@ -356,11 +365,17 @@ $negro: rgb(0, 0, 0);
         }
       }
       &TecIcons {
-        width: 300px;
-        height: 300px;
+        @media (min-width: 471px) {
+          width: 300px;
+          height: 300px;
+        }
         display: grid;
         grid-template-columns: repeat(3, 1fr);
         @mixin rotar($sentido) {
+          font-size: 80px;
+          @media (max-width: 470px) {
+            font-size: 60px;
+          }
           animation: {
             name: #{$sentido}_rotarIconos;
             duration: 20s;
@@ -379,11 +394,9 @@ $negro: rgb(0, 0, 0);
         }
         @include rotar("horario");
         .rotarAntihorario {
-          font-size: 80px;
           @include rotar("antihorario");
         }
         .rotarHorario {
-          font-size: 80px;
           @include rotar("horario");
         }
       }

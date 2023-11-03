@@ -135,8 +135,7 @@ function App() {
         </section>
       </nav>
       <section className={styles.containContent}>
-        <div id="yo"></div>
-        <article className={styles.containContentStart}>
+        <article id="yo" className={styles.containContentStart}>
           <div className={styles.containContentStartMe}>
             <h1>
               <span>{lenguage == "es" ? "Sobre mí" : "About me"}</span>
