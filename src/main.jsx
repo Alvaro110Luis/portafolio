@@ -15,7 +15,7 @@ import ControlApi from "./proyectos/practica9controlApi/controlApi.jsx";
 import Card from "./proyectos/parctica10card/card.jsx";
 const router = createBrowserRouter([
   {
-    path: "/",
+    path: "/portafolio",
     element: <App />,
   },
   {
