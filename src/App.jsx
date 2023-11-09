@@ -4,6 +4,7 @@ import { BiLogoReact, BiLogoJavascript, BiSolidCircle } from "react-icons/bi";
 import { AiFillHtml5, AiFillSetting } from "react-icons/ai";
 import { RxSwitch } from "react-icons/rx";
 import { DiCss3, DiSass } from "react-icons/di";
+import { CiLight, CiDark } from "react-icons/ci";
 import Proyectos from "./Principal/proyectos";
 import Contacto from "./Principal/contacto";
 
@@ -26,6 +27,22 @@ function App() {
             : styles.containCirculosBackgroundDark
         }`}
       >
+        <div
+          className={styles.animacion}
+          style={{
+            animationDuration: `${
+              Math.fround(Math.random() * (7 - 4 + 1)) + 4
+            }s`,
+          }}
+        ></div>
+        <div
+          className={styles.animacion}
+          style={{
+            animationDuration: `${
+              Math.fround(Math.random() * (7 - 4 + 1)) + 4
+            }s`,
+          }}
+        ></div>
         <div
           className={styles.animacion}
           style={{
@@ -103,13 +120,21 @@ function App() {
           >
             <AiFillSetting className={styles.settingsIconOpen} />
             <br />
-            <RxSwitch
-              onClick={() => {
-                if (light) setlight(false);
-                else setlight(true);
-              }}
-              className={light ? styles.lightModeButton : styles.darkModeButton}
-            />
+            {light ? (
+              <CiLight
+                onClick={() => {
+                  setlight(!light);
+                }}
+                className={styles.lightModeButton}
+              />
+            ) : (
+              <CiDark
+                onClick={() => {
+                  setlight(!light);
+                }}
+                className={styles.darkModeButton}
+              />
+            )}
             <br />
             <div
               onClick={() => {
