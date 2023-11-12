@@ -3,15 +3,20 @@ import img1 from "./img/Captura de pantalla 2023-05-15 171554.png";
 import img2 from "./img/Captura de pantalla 2023-05-15 171528.png";
 import img3 from "./img/Captura de pantalla 2023-05-15 171554.png";
 import { useEffect } from "react";
+import { BiArrowBack } from "react-icons/bi";
+import { Link } from "react-router-dom";
 function Blog() {
   useEffect(() => {
     document.body.style.backgroundColor = "rgb(220, 220, 220)";
     return () => {
       document.body.style.backgroundColor = "";
     };
-  },[]);
+  }, []);
   return (
     <>
+      <Link to="/portafolio" className={styles.contenedorBack}>
+        <BiArrowBack />
+      </Link>
       <header id="titulo" className={styles.headerBlog}>
         <h1>Blog de referencia</h1>
       </header>

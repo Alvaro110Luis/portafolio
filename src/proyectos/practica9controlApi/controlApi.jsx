@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react";
 import styles from "./controlApi.module.scss";
+import { BiArrowBack } from "react-icons/bi";
+import { Link } from "react-router-dom";
 function ControlApi() {
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(true);
@@ -42,39 +44,44 @@ function ControlApi() {
     }
   };
   return (
-    <article className={styles.contenedor}>
-      {loading ? (
-        <p className={styles.loading}>Cargando....</p>
-      ) : (
-        <>
-          <input
-            type="text"
-            onChange={(e) => {
-              if (e.target.value != "") {
-                setBusca(
-                  e.target.value.slice(0, 1).toUpperCase() +
-                    e.target.value.slice(1)
-                );
-              } else {
-                setBusca(e.target.value);
-              }
-            }}
-            onKeyDown={(e) => {
-              if (e.key === "Enter") setBusca(e.target.value);
-            }}
-            placeholder="busca"
-            list="opciones"
-            className={styles.buscador}
-          />
-          <datalist id="opciones">
-            {data.data.map((item, index) => {
-              return <option key={index}>{item.first_name}</option>;
-            })}
-          </datalist>
-          <Usuarios />
-        </>
-      )}
-    </article>
+    <>
+      <Link to="/portafolio" className={styles.contenedorBack}>
+        <BiArrowBack />
+      </Link>
+      <article className={styles.contenedor}>
+        {loading ? (
+          <p className={styles.loading}>Cargando....</p>
+        ) : (
+          <>
+            <input
+              type="text"
+              onChange={(e) => {
+                if (e.target.value != "") {
+                  setBusca(
+                    e.target.value.slice(0, 1).toUpperCase() +
+                      e.target.value.slice(1)
+                  );
+                } else {
+                  setBusca(e.target.value);
+                }
+              }}
+              onKeyDown={(e) => {
+                if (e.key === "Enter") setBusca(e.target.value);
+              }}
+              placeholder="busca"
+              list="opciones"
+              className={styles.buscador}
+            />
+            <datalist id="opciones">
+              {data.data.map((item, index) => {
+                return <option key={index}>{item.first_name}</option>;
+              })}
+            </datalist>
+            <Usuarios />
+          </>
+        )}
+      </article>
+    </>
   );
 }
 export default ControlApi;

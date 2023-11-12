@@ -1,12 +1,14 @@
 import styles from "./calculadora.module.scss";
 import { useEffect, useState } from "react";
+import { BiArrowBack } from "react-icons/bi";
+import { Link } from "react-router-dom";
 function Calculadora() {
   useEffect(() => {
     document.body.style.backgroundColor = "rgb(255, 170, 170)";
     return () => {
       document.body.style.backgroundColor = "";
     };
-  },[]);
+  }, []);
   const [operacion, setOperacion] = useState("");
   const operar = (datos) => {
     if (datos[1] == "+") return parseFloat(datos[0]) + parseFloat(datos[2]);
@@ -54,6 +56,9 @@ function Calculadora() {
   };
   return (
     <>
+      <Link to="/portafolio" className={styles.contenedorBack}>
+        <BiArrowBack />
+      </Link>
       <section className={styles.contenedor}>
         <article>
           <p className={styles.contenedorResultado}>

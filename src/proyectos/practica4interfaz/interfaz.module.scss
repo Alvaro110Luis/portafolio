@@ -1,3 +1,10 @@
+.contenedorBack {
+  position: fixed;
+  width: 50px;
+  height: 50px;
+  font-size: 50px;
+  color: rgb(0, 0, 0);
+}
 .artBody {
   width: 700px;
   text-align: center;
@@ -5,7 +12,7 @@
   top: 40%;
   left: 50%;
   transform: translateX(-50%) translateY(50%);
-  color: rgb(0,0,0);
+  color: rgb(0, 0, 0);
   span {
     margin: 0 10px;
     box-shadow: 0 4px 6px 0 black;

@@ -10,6 +10,13 @@
   background-attachment: fixed;
   box-shadow: inset 25vh -25vh 500px 0 rgb(0, 0, 0);
 }
+.contenedorBack {
+  position: fixed;
+  width: 50px;
+  height: 50px;
+  font-size: 50px;
+  color: rgb(105, 105, 105);
+}
 header {
   padding: 20px 5%;
   align-items: center;

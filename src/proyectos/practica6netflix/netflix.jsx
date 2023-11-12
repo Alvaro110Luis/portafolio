@@ -1,7 +1,9 @@
 import styles from "./netflix.module.scss";
 import { AiOutlineSearch } from "react-icons/ai";
+import { BiArrowBack } from "react-icons/bi";
 import img from "./img/Site-logo.png";
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 function Netflix() {
   useEffect(() => {
     document.body.className = styles.divBody;
@@ -12,6 +14,9 @@ function Netflix() {
   const [play, setPlay] = useState(false);
   return (
     <>
+      <Link to="/portafolio" className={styles.contenedorBack}>
+        <BiArrowBack />
+      </Link>
       <header>
         <svg width="120" height="30">
           <path
