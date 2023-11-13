@@ -14,7 +14,7 @@ function Netflix() {
   const [play, setPlay] = useState(false);
   return (
     <>
-      <Link to="/portafolio" className={styles.contenedorBack}>
+      <Link to="/portafolio/" className={styles.contenedorBack}>
         <BiArrowBack />
       </Link>
       <header>

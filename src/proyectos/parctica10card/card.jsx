@@ -19,7 +19,7 @@ function Card() {
   const [put, setPut] = useState([2, false]);
   return (
     <>
-      <Link to="/portafolio" className={styles.contenedorBack}>
+      <Link to="/portafolio/" className={styles.contenedorBack}>
         <BiArrowBack />
       </Link>
       <section className={styles.contenedor}>

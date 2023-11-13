@@ -56,7 +56,7 @@ function Calculadora() {
   };
   return (
     <>
-      <Link to="/portafolio" className={styles.contenedorBack}>
+      <Link to="/portafolio/" className={styles.contenedorBack}>
         <BiArrowBack />
       </Link>
       <section className={styles.contenedor}>

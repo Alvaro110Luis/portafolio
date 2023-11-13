@@ -14,7 +14,7 @@ function Blog() {
   }, []);
   return (
     <>
-      <Link to="/portafolio" className={styles.contenedorBack}>
+      <Link to="/portafolio/" className={styles.contenedorBack}>
         <BiArrowBack />
       </Link>
       <header id="titulo" className={styles.headerBlog}>

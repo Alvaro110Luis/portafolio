@@ -19,7 +19,7 @@ function Proyectos(props) {
       </section>
       <nav className={styles.containLink}>
         <Link
-          to="/proyectos/calculadora"
+          to="/portafolio/calculadora"
           className={`${props.mode ? styles.linkLight : styles.linkDark} ${
             styles.link
           }`}
@@ -28,7 +28,7 @@ function Proyectos(props) {
           <img src={imgCalculadora} />
         </Link>
         <Link
-          to="/proyectos/blog"
+          to="/portafolio/blog"
           className={`${props.mode ? styles.linkLight : styles.linkDark} ${
             styles.link
           }`}
@@ -37,7 +37,7 @@ function Proyectos(props) {
           <img src={imgBlog} />
         </Link>
         <Link
-          to="/proyectos/netflix"
+          to="/portafolio/netflix"
           className={`${props.mode ? styles.linkLight : styles.linkDark} ${
             styles.link
           }`}
@@ -47,7 +47,7 @@ function Proyectos(props) {
           <img src={imgNetflix} />
         </Link>
         <Link
-          to="/proyectos/interfaz"
+          to="/portafolio/interfaz"
           className={`${props.mode ? styles.linkLight : styles.linkDark} ${
             styles.link
           }`}
@@ -57,7 +57,7 @@ function Proyectos(props) {
           <img src={imgInterfaz} />
         </Link>
         <Link
-          to="/proyectos/card"
+          to="/portafolio/card"
           className={`${props.mode ? styles.linkLight : styles.linkDark} ${
             styles.link
           }`}
@@ -66,7 +66,7 @@ function Proyectos(props) {
           <img src={imgCard} />
         </Link>
         <Link
-          to="/proyectos/leftTogle"
+          to="/portafolio/leftTogle"
           className={`${props.mode ? styles.linkLight : styles.linkDark} ${
             styles.link
           }`}
@@ -76,7 +76,7 @@ function Proyectos(props) {
           <img src={imgLeftTogle} />
         </Link>
         <Link
-          to="/proyectos/tarjeta"
+          to="/portafolio/tarjeta3d"
           className={`${props.mode ? styles.linkLight : styles.linkDark} ${
             styles.link
           }`}
@@ -86,7 +86,7 @@ function Proyectos(props) {
           <img src={imgTarjeta} />
         </Link>
         <Link
-          to="/proyectos/controlapi"
+          to="/portafolio/controlapi"
           className={`${props.mode ? styles.linkLight : styles.linkDark} ${
             styles.link
           }`}

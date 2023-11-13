@@ -18,7 +18,7 @@ function Interfaz() {
   }, []);
   return (
     <>
-      <Link to="/portafolio" className={styles.contenedorBack}>
+      <Link to="/portafolio/" className={styles.contenedorBack}>
         <BiArrowBack />
       </Link>
       <article className={styles.artBody}>
