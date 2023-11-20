@@ -1,3 +1,10 @@
+$pallete: (
+  blueWhite: #d6daed,
+  pinkWhite: #f2dfed,
+  green: #12521d,
+  lightGreen: #658a14,
+  mustard: #f1ca75,
+);
 @mixin appear($direccion) {
   @if ($direccion== "X") {
     transform: translateX(100%);
