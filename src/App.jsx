@@ -1,40 +1,26 @@
 import { useEffect, useState } from "react";
 import styles from "./App.module.scss";
-import { BiLogoReact, BiLogoJavascript, BiSolidCircle } from "react-icons/bi";
-import { AiFillHtml5, AiFillSetting } from "react-icons/ai";
-import { RxSwitch } from "react-icons/rx";
+import { BiLogoReact, BiLogoJavascript } from "react-icons/bi";
+import { AiFillHtml5 } from "react-icons/ai";
 import { DiCss3, DiSass } from "react-icons/di";
-import { CiLight, CiDark } from "react-icons/ci";
+import { BsLinkedin } from "react-icons/bs";
+import { Link } from "react-router-dom";
 import Proyectos from "./Principal/proyectos";
 import Contacto from "./Principal/contacto";
 
 function App() {
   useEffect(() => {
-    document.body.style.backgroundColor = "rgb(0, 0, 0)";
+    document.body.style.backgroundColor = "#480048";
     document.body.className = styles.bodyProyectos;
     return () => {
       document.body.style.backgroundColor = "";
     };
   }, []);
-  const [light, setlight] = useState(false);
+  const [light, setlight] = useState(true);
   const [lenguage, setLenguage] = useState("es");
   return (
-    <article className={light ? styles.containLight : styles.containDark}>
-      <section
-        className={`${styles.containCirculosBackground} ${
-          light
-            ? styles.containCirculosBackgroundLight
-            : styles.containCirculosBackgroundDark
-        }`}
-      >
-        <div
-          className={styles.animacion}
-          style={{
-            animationDuration: `${
-              Math.fround(Math.random() * (7 - 4 + 1)) + 4
-            }s`,
-          }}
-        ></div>
+    <article className={styles.contain}>
+      <section className={styles.containCirculosBackground}>
         <div
           className={styles.animacion}
           style={{
@@ -92,73 +78,27 @@ function App() {
           }}
         ></div>
       </section>
-      <nav
-        className={`${styles.containButton} ${
-          light ? styles.containButtonLight : styles.containButtonDark
-        }`}
-      >
-        <a href="#yo">
-          <BiSolidCircle />
-        </a>
-        <a href="#proyectos">
-          <BiSolidCircle />
-        </a>
-        <a href="#contacto">
-          <BiSolidCircle />
-        </a>
-        <section
-          className={`${
-            light ? styles.containSettingsLight : styles.containSettingsDark
-          } ${styles.containSettings}`}
-        >
-          <article
-            className={`${
-              light
-                ? styles.containSettingsIconBorderLight
-                : styles.containSettingsIconBorderDark
-            } ${styles.containSettingsIcon}`}
-          >
-            <AiFillSetting className={styles.settingsIconOpen} />
-            <br />
-            {light ? (
-              <CiLight
-                onClick={() => {
-                  setlight(!light);
-                }}
-                className={styles.lightModeButton}
-              />
-            ) : (
-              <CiDark
-                onClick={() => {
-                  setlight(!light);
-                }}
-                className={styles.darkModeButton}
-              />
-            )}
-            <br />
-            <div
-              onClick={() => {
-                if (lenguage == "es") setLenguage("en");
-                else setLenguage("es");
-              }}
-            >
-              {lenguage == "es" ? "ES" : "EN"}
-            </div>
-          </article>
-          <article className={styles.containSettingsDescription}>
-            <p>
-              {lenguage == "es"
-                ? light
-                  ? "Claro"
-                  : "Oscuro"
-                : light
-                ? "Light"
-                : "Dark"}
-            </p>
-            <p>{lenguage == "es" ? "Idioma" : "Language"}</p>
-          </article>
+      <header className={styles.containHeader}>
+        <section className={styles.containHeaderLogo}>
+          <Link to="https://www.linkedin.com/in/luis-morales-184076285/">
+            <BsLinkedin />
+          </Link>
+          <p>{lenguage == "es" ? "Hola soy Luis!" : "Hi i'am Luis"}</p>
         </section>
-      </nav>
+        <nav className={styles.containHeaderButton}>
+          <a href="#yo">{lenguage == "es" ? "Sobre mí" : "About me"}</a>
+          <a href="#proyectos">{lenguage == "es" ? "Proyectos" : "Projects"}</a>
+          <a href="#contacto">{lenguage == "es" ? "Contacto" : "Contact"}</a>
+          <button
+            onClick={() => {
+              if (lenguage == "es") setLenguage("en");
+              else setLenguage("es");
+            }}
+          >
+            {lenguage == "es" ? "ES" : "EN"}
+          </button>
+        </nav>
+      </header>
       <section className={styles.containContent}>
         <article id="yo" className={styles.containContentStart}>
           <div className={styles.containContentStartMe}>
@@ -174,34 +114,21 @@ function App() {
             </p>
           </div>
           <div className={styles.containContentStartTecIcons}>
-            <AiFillHtml5
-              style={{ color: "rgb(255,100,0)" }}
-              className={styles.rotarAntihorario}
-            />
+            <AiFillHtml5 className={styles.rotarAntihorario} />
             <DiCss3
-              style={{
-                color: "rgb(0,120,255)",
-                gridColumn: "3/4",
-              }}
+              style={{ gridColumn: "3/4" }}
               className={styles.rotarAntihorario}
             />
             <BiLogoReact
-              style={{
-                color: "rgb(0,200,255)",
-                gridColumn: "2/3",
-              }}
+              style={{ gridColumn: "2/3" }}
               className={styles.rotarHorario}
             />
             <BiLogoJavascript
-              style={{
-                color: "rgb(255,255,0)",
-                gridRow: "3/4",
-              }}
+              style={{ gridRow: "3/4" }}
               className={styles.rotarAntihorario}
             />
             <DiSass
               style={{
-                color: "rgb(255,0,255)",
                 gridRow: "3/4",
                 gridColumn: "3/4",
               }}
@@ -210,8 +137,8 @@ function App() {
           </div>
         </article>
         <Proyectos mode={light} translate={lenguage} />
-        <Contacto mode={light} translate={lenguage} />
       </section>
+      <Contacto mode={light} translate={lenguage} />
     </article>
   );
 }

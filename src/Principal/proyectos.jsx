@@ -17,83 +17,83 @@ function Proyectos(props) {
       <section>
         <h1>{props.translate == "es" ? "Proyectos" : "Projects"}</h1>
       </section>
-      <nav className={styles.containLink}>
+      <nav className={styles.containNav}>
         <Link
           to="/portafolio/calculadora"
-          className={`${props.mode ? styles.linkLight : styles.linkDark} ${
-            styles.link
-          }`}
+          className={`${styles.containNavLink} ${styles.containNavLinkEven}`}
         >
-          <h3>{props.translate == "es" ? "Calculadora" : "Calculator"}</h3>
-          <img src={imgCalculadora} />
+          <div className={styles.containNavLinkContent}>
+            <h3>{props.translate == "es" ? "Calculadora" : "Calculator"}</h3>
+            <img src={imgCalculadora} />
+          </div>
         </Link>
         <Link
           to="/portafolio/blog"
-          className={`${props.mode ? styles.linkLight : styles.linkDark} ${
-            styles.link
-          }`}
+          className={`${styles.containNavLink} ${styles.containNavLinkEven}`}
         >
-          <h3>Blog</h3>
-          <img src={imgBlog} />
+          <div className={styles.containNavLinkContent}>
+            <h3>Blog</h3>
+            <img src={imgBlog} />
+          </div>
         </Link>
         <Link
           to="/portafolio/netflix"
-          className={`${props.mode ? styles.linkLight : styles.linkDark} ${
-            styles.link
-          }`}
+          className={`${styles.containNavLink} ${styles.containNavLinkOdd}`}
           style={{ gridRow: "1/3", gridColumn: "2/4" }}
         >
-          <h3>Netflix</h3>
-          <img src={imgNetflix} />
+          <div className={styles.containNavLinkContent}>
+            <h3>Netflix</h3>
+            <img src={imgNetflix} />
+          </div>
         </Link>
         <Link
           to="/portafolio/interfaz"
-          className={`${props.mode ? styles.linkLight : styles.linkDark} ${
-            styles.link
-          }`}
+          className={`${styles.containNavLink} ${styles.containNavLinkEven}`}
           style={{ gridColumn: "1/3" }}
         >
-          <h3>{props.translate == "es" ? "Interfaz" : "Interface"}</h3>
-          <img src={imgInterfaz} />
+          <div className={styles.containNavLinkContent}>
+            <h3>{props.translate == "es" ? "Interfaz" : "Interface"}</h3>
+            <img src={imgInterfaz} />
+          </div>
         </Link>
         <Link
           to="/portafolio/card"
-          className={`${props.mode ? styles.linkLight : styles.linkDark} ${
-            styles.link
-          }`}
+          className={`${styles.containNavLink} ${styles.containNavLinkOdd}`}
         >
-          <h3>{props.translate == "es" ? "Tarjeta" : "Card"}</h3>
-          <img src={imgCard} />
+          <div className={styles.containNavLinkContent}>
+            <h3>{props.translate == "es" ? "Tarjeta" : "Card"}</h3>
+            <img src={imgCard} />
+          </div>
         </Link>
         <Link
           to="/portafolio/leftTogle"
-          className={`${props.mode ? styles.linkLight : styles.linkDark} ${
-            styles.link
-          }`}
+          className={`${styles.containNavLink} ${styles.containNavLinkEven}`}
           style={{ gridRow: "4/6" }}
         >
-          <h3>{props.translate == "es" ? "Barra Lateral" : "Sidebar"}</h3>
-          <img src={imgLeftTogle} />
+          <div className={styles.containNavLinkContent}>
+            <h3>{props.translate == "es" ? "Barra Lateral" : "Sidebar"}</h3>
+            <img src={imgLeftTogle} />
+          </div>
         </Link>
         <Link
           to="/portafolio/tarjeta3d"
-          className={`${props.mode ? styles.linkLight : styles.linkDark} ${
-            styles.link
-          }`}
+          className={`${styles.containNavLink} ${styles.containNavLinkOdd}`}
           style={{ gridColumn: "2/4" }}
         >
-          <h3>{props.translate == "es" ? "Tarjeta 3D" : "3D Card"}</h3>
-          <img src={imgTarjeta} />
+          <div className={styles.containNavLinkContent}>
+            <h3>{props.translate == "es" ? "Tarjeta 3D" : "3D Card"}</h3>
+            <img src={imgTarjeta} />
+          </div>
         </Link>
         <Link
           to="/portafolio/controlapi"
-          className={`${props.mode ? styles.linkLight : styles.linkDark} ${
-            styles.link
-          }`}
+          className={`${styles.containNavLink} ${styles.containNavLinkOdd}`}
           style={{ gridColumn: "2/4" }}
         >
-          <h3>{props.translate == "es" ? "Control API" : "API Control"}</h3>
-          <img src={imgControlApi} />
+          <div className={styles.containNavLinkContent}>
+            <h3>{props.translate == "es" ? "Control API" : "API Control"}</h3>
+            <img src={imgControlApi} />
+          </div>
         </Link>
       </nav>
     </article>

@@ -1,162 +1,103 @@
 @use "../Global";
 .contain {
-  margin: {
-    left: 15%;
-    bottom: 15%;
-  }
+  padding-top: 100px;
   @media (max-width: 768px) {
     margin: 15% 0;
   }
   section {
-    border: {
-      right: 10px solid rgb(0, 180, 0);
-      top: 5px solid rgb(0, 120, 0);
-    }
     padding: 10px;
     margin: 5% 0;
+    border-left: 5px solid map-get(Global.$pallete, color1);
     overflow: hidden;
     h1 {
-      margin: 0;
-      padding: 10px;
+      color: map-get(Global.$pallete, color5);
       font-size: xx-large;
-      @include Global.appear("-Y");
+      @include Global.appear("-X");
+      background-color: map-get(Global.$pallete, color3);
+      display: inline-block;
+      padding: 20px;
+      margin: 10px;
+      border-radius: 20px;
+      box-shadow: -40px 0 map-get(Global.$pallete, color3);
     }
   }
-  &Link {
+  &Nav {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 80px;
-    @media (max-width: 768px) {
+    gap: 20px;
+    margin: 0 5%;
+    @media (max-width: 1030px) {
       gap: 30px;
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
     }
-    .link {
-      @mixin linkHover($colorBorde) {
-        @for $i from 1 through 10 {
-          &:nth-child(#{$i}) {
-            @if ($i%7==0) {
-              border: {
-                left: 5px solid rgb(0, 180, 0);
-                top: 10px solid rgb(0, 120, 0);
-              }
-              border-bottom-right-radius: 20px;
-              &:hover {
-                box-shadow: 5px 5px 5px 5px $colorBorde;
-              }
-              h3 {
-                @include Global.appear("-Y");
-              }
-              img {
-                @include Global.appear("-X");
-              }
-            } @else if($i%3==0) {
-              border: {
-                right: 5px solid rgb(0, 180, 0);
-                top: 10px solid rgb(0, 120, 0);
-              }
-              border-bottom-left-radius: 20px;
-              &:hover {
-                box-shadow: -5px 5px 5px 5px $colorBorde;
-              }
-              h3 {
-                @include Global.appear("-Y");
-              }
-              img {
-                @include Global.appear("X");
-              }
-            } @else if ($i%2==0) {
-              border: {
-                left: 5px solid rgb(0, 180, 0);
-                bottom: 10px solid rgb(0, 120, 0);
-              }
-              border-top-right-radius: 20px;
-              &:hover {
-                box-shadow: 5px -5px 5px 5px $colorBorde;
-              }
-              h3 {
-                @include Global.appear("-X");
-              }
-              img {
-                @include Global.appear("Y");
-              }
-            } @else {
-              border: {
-                right: 5px solid rgb(0, 180, 0);
-                bottom: 10px solid rgb(0, 120, 0);
-              }
-              text-align: right;
-              border-top-left-radius: 20px;
-              &:hover {
-                box-shadow: -5px -5px 5px 5px $colorBorde;
-              }
-              h3 {
-                @include Global.appear("X");
-              }
-              img {
-                @include Global.appear("Y");
-              }
-            }
+    &Link {
+      &Odd {
+        border-right: 5px solid map-get(Global.$pallete, color1);
+        div {
+          box-shadow: 100px 0 map-get(Global.$pallete, color3);
+          @include Global.appear("X");
+          &:hover {
+            box-shadow: 100px 0 map-get(Global.$pallete, color4);
           }
         }
       }
-      &Light {
-        h3 {
-          color: rgb(0, 0, 0);
+      &Even {
+        border-left: 5px solid map-get(Global.$pallete, color1);
+        div {
+          box-shadow: -100px 0 map-get(Global.$pallete, color3);
+          @include Global.appear("-X");
+          &:hover {
+            box-shadow: -100px 0 map-get(Global.$pallete, color4);
+          }
         }
-        img {
-          opacity: 0.8;
-        }
-        &:hover {
-          background-color: rgba(200, 200, 200, 0.5);
-        }
-        @include linkHover(rgb(50, 50, 50));
       }
-      &Dark {
-        h3 {
-          color: rgb(255, 255, 255);
-        }
-        img {
-          opacity: 0.6;
-        }
-        &:hover {
-          background-color: rgba(100, 100, 100, 0.5);
-        }
-        @include linkHover(rgb(100, 100, 100));
-      }
+      padding: 20px 0;
       transition: all 0.5s;
-      padding: {
-        left: 10px;
-        right: 10px;
-        bottom: 20px;
-      }
       text-decoration: none;
       overflow: hidden;
       display: flex;
-      flex-direction: column;
       justify-content: center;
-      @media (max-width: 768px) {
-        width: 40%;
+      @media (max-width: 1030px) {
+        width: 45%;
         height: 300px;
+        border: {
+          left: none;
+          right: none;
+        }
+        border-top: 5px solid map-get(Global.$pallete, color1);
+        div {
+          width: 60%;
+          box-shadow: 0 -100px map-get(Global.$pallete, color3);
+          &:hover {
+            box-shadow: 0 -100px map-get(Global.$pallete, color4);
+          }
+        }
       }
-      @media (max-width: 447px) {
-        width: 80%;
-        height: 300px;
-      }
-      h3 {
-        padding: 24px 0;
-        margin: 0;
-        font-size: x-large;
-      }
-      img {
+      @media (max-width:630px) {
         width: 100%;
-        height: 80%;
-        transition: all 0.5s;
       }
-      &:hover {
+      &Content {
+        background-color: map-get(Global.$pallete, color3);
+        border-radius: 20px;
+        padding: 30px;
+        transition: all 0.5s;
+        h3 {
+          margin-top: 0;
+          font-size: x-large;
+          color: map-get(Global.$pallete, color5);
+          transition: all 0.5s;
+        }
         img {
-          opacity: 1;
+          width: 100%;
+          height: 80%;
+        }
+        &:hover {
+          h3 {
+            color: map-get(Global.$pallete, color1);
+          }
+          background-color: map-get(Global.$pallete, color4);
         }
       }
     }

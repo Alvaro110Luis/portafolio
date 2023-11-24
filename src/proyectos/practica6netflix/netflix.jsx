@@ -17,7 +17,7 @@ function Netflix() {
       <Link to="/portafolio/" className={styles.contenedorBack}>
         <BiArrowBack />
       </Link>
-      <header>
+      <header className={styles.headerNetflix}>
         <svg width="120" height="30">
           <path
             d="

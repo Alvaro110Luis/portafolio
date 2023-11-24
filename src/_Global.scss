@@ -1,9 +1,9 @@
 $pallete: (
-  blueWhite: #d6daed,
-  pinkWhite: #f2dfed,
-  green: #12521d,
-  lightGreen: #658a14,
-  mustard: #f1ca75,
+  color1: #300030,
+  color2: #480048,
+  color3: #601848,
+  color4: #c04848,
+  color5: #f07241,
 );
 @mixin appear($direccion) {
   @if ($direccion== "X") {

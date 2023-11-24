@@ -1,72 +1,91 @@
 @use "../Global";
 .containContact {
   margin: {
-    top: 25%;
-    left: 15%;
-    bottom: 20%;
+    top: 5%;
   }
-  @media (max-width:768px) {
-    margin: 250px 0;
-  }
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  background-color: map-get(Global.$pallete, color1);
   &Title {
     border: {
-      left: 10px solid rgb(0, 0, 100);
-      top: 5px solid rgb(0, 0, 255);
+      left: 5px solid map-get(Global.$pallete, color2);
+      bottom: 5px solid map-get(Global.$pallete, color2);
     }
-    padding: 10px;
-    margin: 10% 0;
+    padding: 10px 40px;
+    margin-top: 40px;
     overflow: hidden;
+    color: map-get(Global.$pallete, color4);
+    font-size: xx-large;
+    display: flex;
+    align-items: center;
+    @media (max-width: 407px) {
+      padding: 10px;
+      font-size: x-large;
+    }
     h1 {
       margin: 0;
-      font-size: xx-large;
-      @include Global.appear("-Y");
+      margin-right: 30px;
+      display: inline-block;
+    }
+    svg {
+      font-size: xxx-large;
     }
   }
-  nav {
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-    article {
-      @mixin icons($color) {
-        border: {
-          bottom: 10px solid $color;
-        }
-        a {
-          color: $color;
-        }
-        div {
-          background-color: $color;
-        }
-        &:hover div {
-          transform: translateX(0);
-        }
+  &Form {
+    color: map-get(Global.$pallete, color5);
+    margin: 0 50px 50px 50px;
+    label {
+      font-weight: bold;
+    }
+    input,
+    textarea {
+      background-color: map-get(Global.$pallete, color3);
+      border-radius: 10px;
+      width: 90%;
+      padding: 5%;
+      border: none;
+      color: map-get(Global.$pallete, color5);
+      &::placeholder {
+        color: map-get(Global.$pallete, color4);
       }
-      overflow: hidden;
-      a {
-        font-size: 80px;
-        @media (max-width:471px) {
-          font-size: 40px;
-        }
-        svg {
-          margin: 20px;
-          @include Global.appear("Y");
-        }
+      &:focus-visible {
+        outline: 1px solid map-get(Global.$pallete, color5);
       }
-      div:nth-child(1) {
-        display: inline-block;
-        transition: all 0.4s;
-        width: 5px;
-        height: 100%;
-        transform: translateY(120%);
+    }
+    textarea {
+      max-height: 200px;
+      resize: vertical;
+    }
+    @mixin border($direction) {
+      padding: 20px 50px;
+      border: {
+        #{$direction}: 5px solid map-get(Global.$pallete, color2);
+        bottom: 5px solid map-get(Global.$pallete, color2);
       }
-      &:nth-child(1) {
-        @include icons(rgb(40, 130, 205));
+      @media (max-width: 407px) {
+        padding: 20px 40px;
       }
-      &:nth-child(2) {
-        @include icons(rgb(210, 20, 20));
-      }
-      &:nth-child(3) {
-        @include icons(rgb(30, 210, 80));
+    }
+    .divGmail {
+      @include border("right");
+    }
+    .divName {
+      @include border("left");
+    }
+    .divMessage {
+      @include border("right");
+    }
+    .divSendButton {
+      @include border("left");
+    }
+    .sendButton {
+      width: 50%;
+      font-weight: bold;
+      background-color: map-get(Global.$pallete, color3);
+      &:active {
+        background-color: map-get(Global.$pallete, color5);
+        color: map-get(Global.$pallete, color2);
       }
     }
   }
